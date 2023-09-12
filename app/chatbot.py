@@ -116,7 +116,7 @@ def chat():
         print("CHAT HISTORY DICTS: ", chatHistory_dicts)
 
     try:
-        openai.api_key = "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"
+        openai.api_key = os.getenv("OPENAI_APIKEY")
 
         # Generate an AI response using OpenAI Chat API
         completion = openai.ChatCompletion.create(
