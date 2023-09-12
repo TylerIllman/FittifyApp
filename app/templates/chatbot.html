@@ -1,0 +1,96 @@
+<!DOCTYPE html> <!-- HTML document type declaration -->
+<html lang="en"> <!-- HTML root element with English language specification -->
+
+<head> <!-- Head section of the HTML document -->
+    <meta charset="UTF-8"> <!-- Character encoding declaration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport setting for responsive design -->
+    <title>Chat Page</title> <!-- Title of the HTML document -->
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/chatbot.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/masterStyling.css')}}">
+</head> 
+<body> <!-- Body section of the HTML document -->
+    <!-- Header section -->
+    <div class = "header">
+        <!-- Logo section -->
+        <div class = "header-logo">
+            <h1 id="header-title">💪Fittify</h1> <!-- Site title -->
+        </div>
+        <!-- Buttons section -->
+        <div class="header-buttons">
+            <i id="icon-saved-messages-button" class="fa-regular fa-bookmark header-icon"></i>
+            <!-- Icon for saved messages -->
+            <i id="icon-user-details-button" class="fa-regular fa-user header-icon"></i> <!-- Icon for user details -->
+            <i id="icon-toggle-search-button" class="fa-solid fa-magnifying-glass header-icon"></i>
+            <!-- Icon for search toggle -->
+            <button id="logout-button" class="header-buttons-login">Logout</button> <!-- Logout button -->
+        </div>
+    </div>
+    <!-- Search bar section -->
+    <div id="search-items-wrapper" style="display: none;">
+        <!-- Various icons and input for the search bar -->
+        <i id="search-button" class="fa-solid fa-magnifying-glass search-bar-icons"></i>
+        <input type=text id="chat-search-input" placeholder="Search">
+        <p id="search-results-fraction" style="display: none;" class="search-bar-index-fraction"></p>
+        <i id="back-search-button" style="display: none;" class="fa-solid fa-arrow-up search-bar-icons"></i>
+        <i id="next-search-button" style="display: none;" class="fa-solid fa-arrow-down search-bar-icons"></i>
+        <i id="close-search-button" class="fa-solid fa-x search-bar-icons"></i>
+    </div>
+    <!-- Chat container -->
+    <div id="chat-container" class="chat-container">
+        <!-- Chat window -->
+        <div id="chat-window">
+            <div class="assistant-message-element">
+                <span class="message-content" data-message-id="-1">
+                    Hey! I'm 💪Fittify and I am so excited to help you on your fitness journey! Send me a message and I
+                    can help you with any fitness related questions.<br>
+                    <br>
+                    Here's a few tips that will allow you to get the most out of me:<br>
+                    <br>
+                    You can save any message you might want to come back to later as either a 🍽️ Meal Plan, 🏋️‍♂️
+                    Workout Plan or ✏️ Other by clicking on them. To access these saved messages just click the <i
+                        id="example-icon-saved-messages" class="fa-regular fa-bookmark icon-intext"></i> button at the
+                    top of the screen.<br>
+                    <br>
+                    Updating your details such as weight, dietary requirements and fitness goals will allow me to give
+                    you more accurate advice. To update your details just click the <i id="example-icon-user-details"
+                        class="fa-regular fa-user icon-intext"></i> button at the top of the screen.<br>
+                    <br>
+                    You can also search for any message by clicking on the <i id="example-icon-search"
+                        class="fa-solid fa-magnifying-glass icon-intext"></i> button at the top of the screen. This will
+                    allow you to search for any message by keyword.<br>
+                    <br>
+                    Now let's get started! What would you like to know?
+                </span>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Input section -->
+    <div id="input-container" class="input-container">
+        <div id="awaiting-response" style="display: none;">
+            Please wait for a response before sending another message...
+        </div>
+        <div id="input-wrapper">
+            <!-- Input field for user messages -->
+            <input type="text" id="input-message" class="input-message-field" placeholder="Type your message...">
+            <!-- Send button-->
+            <button id="send-button">
+                <!-- Icon for the send button -->
+                <i class="fa fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    <!-- This script tag initializes the chatHistory variable with the data from the server -->
+    <script>
+        var chatHistory = {{ chatHistory | tojson | safe }};
+    </script>
+    <!-- Include the JavaScript file for the chatbot -->
+    <script src="{{url_for('static',filename='js/chatbot.js')}}"></script>
+    <!-- Include the FontAwesome library for the icons used in this HTML document -->
+    <script src="https://kit.fontawesome.com/96bfb5d0a4.js" crossorigin="anonymous"></script>
+</body> <!-- End of body section -->
+
+</html> <!-- End of HTML document -->

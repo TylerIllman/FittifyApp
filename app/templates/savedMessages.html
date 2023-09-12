@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Messages</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/masterStyling.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/savedMessages.css')}}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-logo">
+            <h1 id="header-title">💪Fittify</h1>
+        </div>
+        <div class="header-buttons">
+            <i id="icon-user-chat-button" class="fa-regular fa-comment header-icon"></i>
+            <button id="logout-button" class="header-buttons-login">Logout</button>
+        </div>
+    </div>
+    <div class="SM-title">
+        <h2>Saved Messages</h2>
+    </div>
+    <div id="toggle-buttons">
+        <button class="toggle-button" data-option="1">🍽️ Meal Plan</button>
+        <button class="toggle-button" data-option="2">🏋️‍♂️ Workout Plan</button>
+        <button class="toggle-button" data-option="3">✏️ Other</button>
+    </div>
+    <div id="saved-messages-container">
+    </div>
+
+    <script src="{{ url_for('static', filename='js/savedMessages.js') }}"></script>
+    <script src="https://kit.fontawesome.com/96bfb5d0a4.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+:root {
+    /* Colours */
+    --text-colour: #000000;
+    /* --accent-colour: #946FC8; */
+    --accent-colour: #A888D3;
+    --primary-button-colour: #FFCB13;
+    --secondary-btn-message-colour: #EDE8F2;
+    --primary-background-colour: #FCFAFF;
+    --secondary-background-colour: #FFFFFF;
+    /* Fonts */
+
+}
+
+
+@font-face {
+    font-family: 'AvenirNextRegular';
+    src: url('../fonts/AvenirNextLTPro-Regular.otf') format('truetype');
+  }
+
+@font-face {
+    font-family: 'AvenirNextBold';
+    src: url('../fonts/AvenirNextLTPro-Bold.otf') format('truetype');
+  }
+

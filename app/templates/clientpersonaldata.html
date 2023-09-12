@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/clientPersonalDetails.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/masterStyling.css')}}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-logo">
+            <h1 id="header-title">💪Fittify</h1>
+        </div>
+        <div class="header-buttons">
+            <i id="icon-user-chat-button" class="fa-regular fa-comment header-icon"></i>
+            <button id="logout-button" class="header-buttons-login">Logout</button>
+        </div>
+    </div>
+
+    <form action="/process-form" method="post" id="personal-details-form" class="personal-details-form-wrapper">
+        {% if error %}
+        <div class="profile-error-msg">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <h1 id="personal-details-form-title">Tell me about yourself!</h1>
+
+        <div class="personal-details-form-element-wrapper">
+            <label for="fitness-goals" class="personal-details-labels">What are your fitness 🏆 goals?</label>
+            <input id="fitness-goals" class="personal-details-form-input" name="fitness-goals" type="text"
+                placeholder="I want to get really fit!" required>
+        </div>
+
+        <div class="personal-details-form-element-wrapper">
+            <label for="diet" class="personal-details-labels">Do you have any dietary 🥗 requirements?</label>
+            <input id="diet" class="personal-details-form-input" name="diet" type="text"
+                placeholder="I am vegan and allergic to peanuts" required>
+        </div>
+
+        <div class="personal-details-form-element-wrapper">
+            <label for="workoutdays" class="personal-details-labels">How many days 🗓️ would you like to workout per
+                week?</label>
+            <input type="number" class="personal-details-form-input" id="workoutdays" name="workoutdays" placeholder="4"
+                min="1" max="7" required>
+        </div>
+
+        <div class="personal-details-form-element-wrapper">
+            <label for="workoutmins" class="personal-details-labels">How many minutes long will each workout 🤸‍♀️
+                be?</label>
+            <input type="number" id="workoutmins" class="personal-details-form-input" name="workoutmins"
+                placeholder="30" min="0" max="1440" required>
+        </div>
+
+        <div class="personal-details-form-element-wrapper">
+            <label for="weight" class="personal-details-labels">How much do you ⚖️ weigh? (kg)</label>
+            <input type="number" class="personal-details-form-input" id="weight" name="weight" placeholder="65"
+                min="0.1" max="200" step="0.1" required>
+        </div>
+
+        <div class="personal-details-form-element-wrapper">
+            <label for="height" class="personal-details-labels">How tall are 📏 you? (cm)</label>
+            <input type="number" class="personal-details-form-input" id="height" name="height" placeholder="165"
+                min="50" max="250" required>
+        </div>
+    
+        <div class="personal-details-form-element-wrapper">
+            <label for="accessgym" class="personal-details-labels">Do you have access to a 🏋️‍♂️ gym?</label>
+            <div class="personal-details-select-wrapper">
+                <select id="accessgym" class="personal-details-form-input" name="accessgym" required>
+                    <option value="">Please select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="personal-details-form-element-wrapper">
+            <label for="gender" class="personal-details-labels">What is your 🚻 gender?</label>
+            <div class="personal-details-select-wrapper">
+                <select id="gender" class="personal-details-form-input" name="gender" required>
+                    <option value="">Please select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <input type="submit" class="personal-details-submit-button" value="Save Details">
+    </form>
+
+</body>
+<script> 
+    // data variable for storing data (not provided in the code snippet)
+    data = {{ data | tojson | safe }};
+</script>
+<script src="{{url_for('static',filename='js/clientPersonalData.js')}}"></script>
+<script src="https://kit.fontawesome.com/96bfb5d0a4.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

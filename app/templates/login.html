@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/login-signup.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/masterStyling.css')}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-logo">
+      <h1 id="header-title">💪Fittify</h1>
+    </div>
+    <div class="header-buttons">
+      <button id="header-login-button" class="header-buttons-login">Login</button>
+      <button id="header-signup-button">Signup</button>
+    </div>
+  </div>
+
+  <form method="post" action="/login" class="login-form">
+    <h1 id="login-form-title">Login</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <!-- <ul class="flash-messages"> -->
+    {% for message in messages %}
+    <p class="login-error-message">{{ message }}</p>
+    {% endfor %}
+    <!-- </ul> -->
+    {% endif %}
+    {% endwith %}
+    <input type="text" id="username" name="username" placeholder="Username" class="login-form-input" required><br>
+    <input type="password" id="password" name="password" placeholder="Password" class="login-form-input" required><br>
+    <input type="submit" value="Login" class="login-form-login-button">
+    <p class="input-form-no-account-p">Don't have an account? <a href="/signup">Signup here</a></p>
+  </form>
+
+  <script src="{{url_for('static',filename='js/login.js')}}"></script>
+
+
+</body>
+
+</html>

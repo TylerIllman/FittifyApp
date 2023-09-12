@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sign up form</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/login-signup.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/masterStyling.css')}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-logo">
+      <h1 id="header-title">💪Fittify</h1>
+    </div>
+    <div class="header-buttons">
+      <button id="header-login-button" class="header-buttons-login">Login</button>
+      <button id="header-signup-button">Sign Up</button>
+    </div>
+  </div>
+  <form action="/signup" method="POST" class="login-form">
+    <h1 id="login-form-title">Signup</h1>
+    {% if error %}
+    <p class="login-error-message">{{ error }}</p>
+    {% endif %}
+    <!-- Input fields for username, email, and password -->
+    <input type="text" id="username" name="username" placeholder="Username" class="login-form-input" required><br>
+    <input type="email" id="email" name="email" placeholder="Email" class="login-form-input" required><br>
+    <input type="password" id="password" name="password" placeholder="Password" class="login-form-input" required><br>
+    <!-- Signup button -->
+    <input type="submit" value="Signup" class="login-form-login-button">
+    <!-- Link to the login page -->
+    <p class="input-form-no-account-p">Already have an account? <a href="/login">Login here</a></p>
+  </form>
+
+  <!-- Script file for signup functionality -->
+  <script src="{{url_for('static',filename='js/signUp.js')}}"></script>
+</body>
+
+</html>

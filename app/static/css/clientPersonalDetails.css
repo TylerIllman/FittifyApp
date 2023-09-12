@@ -1,0 +1,239 @@
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'AvenirNextRegular', sans-serif;
+    text-decoration: none;
+    font-weight: 250;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-background-colour);
+
+    height: 100%;
+    margin: 20px;
+    padding: 0;
+}
+
+/* ---- HEADER STYILING ---- */
+
+.header {
+    z-index: 1000000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    background-color: var(--secondary-background-colour);
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: 0px;
+    left: 40px;
+    right: 40px;
+    top: 20px;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+#header-title {
+    font-family: "AvenierNextBold", sans-serif;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+
+    /* font-family: ; */
+}
+
+.header-icon {
+    font-size: 30px;
+    align-self: center;
+    color: var(--accent-colour);
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+.header-icon:hover {
+    color: var(--primary-button-colour)
+}
+
+.header-buttons-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--secondary-btn-message-colour);
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-buttons-login:hover {
+    background-color: var(--primary-button-colour)
+}
+
+
+.header-buttons-signup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+
+    background: var(--primary-button-colour);
+    border-radius: 10px;
+}
+
+#personal-details-form-title {
+    font-family: "AvenierNextBold", sans-serif;
+    margin-top: 30px;
+    align-self: center;
+}
+
+#personal-details-form {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+    padding: 0px;
+    gap: 25px;
+    padding-top: 70px;
+    max-width: 1400px;
+}
+
+.personal-details-form-element-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0px;
+    gap: 4px;
+    width: 100%;
+}
+
+.personal-details-labels {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.personal-details-form-input {
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+    background: var(--secondary-background-colour);
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    font-size: medium;
+}
+
+
+/* HIDES THE UP AND DOWN ARROWS ON NUMBER INPUTS  */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.personal-details-submit-button {
+    display: flex;
+    align-self: center;
+    padding: 10px 20px;
+    background: var(--accent-colour);
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+
+
+.personal-details-submit-button:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-button-colour);
+}
+
+.profile-error-msg {
+    font-size: large;
+    font-weight: bold;
+    color: red;
+    margin-top: 0px;
+    align-self: center;
+}
+
+@media only screen and (max-width: 500px) {
+
+    body {
+        margin-top: 60px;
+    }
+
+    .header {
+
+        width: 100%;
+        background-color: var(--secondary-background-colour);
+        text-align: center;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 0px;
+        margin: 0px;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        min-width: 0px;
+        box-sizing: border-box;
+
+    }
+
+    #header-title {
+        font-size: 20px;
+    }
+
+    .header-buttons-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        background: var(--secondary-btn-message-colour);
+        border-radius: 5px;
+        border: none;
+        text-decoration: none;
+        font-family: inherit;
+        font-size: 100%;
+        cursor: pointer;
+        font-size: medium;
+        transition: background-color 0.3s ease;
+    }
+
+
+    .header-icon {
+        font-size: 20px;
+    }
+
+}
